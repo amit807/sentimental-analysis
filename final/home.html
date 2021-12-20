@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+	<meta charset="UTF-8">
+	background-image: url("book.png");
+	<title>sentiment Analysis</title>
+	<h1 style="color:black" class="bg-success text-white"> Multiclass sentiment Analysis using support vector Machine on Amazon review data</h1>
+	<h2 style="color:white" class="bg-danger text-white">Predict whether the review is Positive or Negative</h2>
+</head>
+<body>
+
+<div class="container">
+  	<form action="{{url_for('predict')}}" method="Post" class="form">
+    	<div class="form-group">
+      		<label for="Review">Review:</label>
+      		<textarea class="form-control" rows="5" id="comment" name="inp" required="required"></textarea>
+    	</div>
+    	<button type="submit" class="btn btn-primary">Predict</button>
+  	</form>
+	<h4 class="output">{{message}}</h4>
+<br>
+</div>
+</body>
+</html>
